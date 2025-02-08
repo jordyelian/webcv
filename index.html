@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV de Jordy Elian Figueroa Martínez</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  />
+
+  <!-- AOS CSS (Animate On Scroll) -->
+  <link 
+    rel="stylesheet" 
+    href="https://unpkg.com/aos@2.3.1/dist/aos.css" 
+  />
+
+  <!-- Google Fonts -->
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" 
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome (para íconos) -->
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-..." 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    /********************************
+     * Estilos globales
+     ********************************/
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #333;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+    }
+
+    /********************************
+     * Navbar
+     ********************************/
+    .navbar {
+      background: #2c3e50;
+    }
+    .navbar-brand,
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+    }
+    .navbar-nav .nav-link:hover {
+      color: #f1c40f !important;
+    }
+
+    /********************************
+     * Hero Section
+     ********************************/
+     .hero {
+  position: relative;
+  background: linear-gradient(
+      135deg, 
+      rgba(44, 62, 80, 0.9), 
+      rgba(111, 136, 160, 0.9)
+    ),
+    url('https://user-images.githubusercontent.com/74038190/212749447-bfb7e725-6987-49d9-ae85-2015e3e7cc41.gif')
+    center/cover no-repeat;
+  padding: 100px 0;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+    .hero .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .hero .profile-pic {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #f1c40f;
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+    .hero .profile-pic:hover {
+      transform: scale(1.05);
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .hero h2 {
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+
+    /********************************
+     * Sección Información Personal
+     ********************************/
+    .personal-info {
+      background-color: #fff;
+      margin-top: -50px; /* Superposición sobre el hero */
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 40px;
+      position: relative;
+      z-index: 3;
+    }
+    .personal-info ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .personal-info li {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    /********************************
+     * Secciones (Educación, Experiencia, etc.)
+     ********************************/
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #f1c40f;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+    .section-container {
+      margin: 60px auto;
+    }
+
+    /* Tarjetas para formación, experiencia, etc. */
+    .card-custom {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card-custom:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .card-custom h5 {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+    .card-custom p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .card-custom ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    /********************************
+     * Skills / Habilidades
+     ********************************/
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-left: 0;
+      list-style: none;
+    }
+    .skill-badge {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      transition: background-color 0.3s ease;
+    }
+    .skill-badge:hover {
+      background-color: #f1c40f;
+      color: #2c3e50;
+    }
+
+    /********************************
+     * Footer
+     ********************************/
+    footer {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    footer a {
+      color: #f1c40f;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /********************************
+     * Responsividad
+     ********************************/
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero h2 {
+        font-size: 1.1rem;
+      }
+      .personal-info {
+        margin-top: 0;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#inicio">CV Jordy Figueroa</a>
+      <button 
+        class="navbar-toggler text-white" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#formacion">Formación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="container">
+      <div class="hero-content d-flex flex-column align-items-center justify-content-center">
+        <!-- Foto de Perfil -->
+        <img 
+        src="assets/jordyimg.jpg" alt="Foto de Jordy" " 
+          class="profile-pic"
+          data-aos="zoom-in"
+        />
+        <h1 class="mt-3" data-aos="fade-up">Jordy Elian Figueroa Martínez</h1>
+        <h2 data-aos="fade-up" data-aos-delay="100">
+          Ingeniero en Software • Soporte de TI
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Información Personal -->
+  <section class="personal-info container mt-5" data-aos="fade-up" data-aos-delay="200">
+    <div class="row">
+      <div class="col-12 col-lg-12">
+        <!-- Datos Personales -->
+        <h3 class="mb-3">Datos Personales</h3>
+        <ul>
+         
+          <li><strong>Cédula:</strong> 0950565267</li>
+          <li><strong>Teléfono:</strong> 0989618559</li>
+          <li><strong>Edad:</strong> 24 años</li>
+          <li><strong>Fecha de nacimiento:</strong> 6 de marzo del 2000</li>
+          <li><strong>Estado civil:</strong> Soltero</li>
+          <li><strong>Email:</strong> jordy-elian2000@hotmail.com</li>
+        </ul>
+
+        <!-- Objetivo Profesional -->
+        <h3 class="mt-4">Objetivo Profesional</h3>
+        <p>
+          Soy Ingeniero en Software con una sólida formación técnica y experiencia en soporte, 
+          mantenimiento y optimización de sistemas. Mi objetivo es integrarme a un equipo innovador 
+          donde pueda aplicar mis conocimientos para desarrollar, mejorar y gestionar sistemas que 
+          impulsen la eficiencia y la adaptabilidad tecnológica de la organización. Me apasiona 
+          trabajar en proyectos que involucren la integración de soluciones tecnológicas complejas, 
+          la automatización de procesos y la mejora continua de la infraestructura, con el fin de 
+          maximizar el rendimiento y la escalabilidad de los sistemas en un entorno dinámico y en 
+          constante evolución.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formación Académica -->
+  <section class="section-container container" id="formacion">
+    <h2 class="section-title text-center" data-aos="fade-up">Formación Académica</h2>
+    <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
+      <!-- Bachiller -->
+      <div class="col-md-6 d-flex">
+        <div class="card-custom w-100">
+          <h5>Bachiller técnico en administración de sistemas (2015 - 2018)</h5>
+          <p>
+            <strong>Unidad educativa diez de enero</strong> - Durán, Ecuador
+          </p>
+        </div>
+      </div>
+      <!-- Ingeniería -->
+      <div class="col-md-6 d-flex">
+        <div class="card-custom w-100">
+          <h5>Ingeniero en Software (Titulado)</h5>
+          <p>
+            Universidad de Guayaquil - Facultad de Ciencias Matemáticas y Físicas<br>
+            Guayaquil, Ecuador
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiencia Profesional -->
+  <section class="section-container container" id="experiencia">
+    <h2 class="section-title text-center" data-aos="fade-up">Experiencia Profesional</h2>
+    
+    <div data-aos="fade-up" data-aos-delay="100" class="card-custom">
+      <h5>Pasante de Tecnologías de la Información (abril/2017 – mayo/2017)</h5>
+      <p><strong>Emapad EP, Durán</strong></p>
+      <ul>
+        <li>Servicio técnico</li>
+        <li>Mantenimiento de equipos</li>
+        <li>Instalación de periféricos</li>
+        <li>Visitas técnicas (virtuales y presenciales)</li>
+        <li>Configuración de equipos</li>
+      </ul>
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="200" class="card-custom">
+      <h5>Pasante Preprofesional (enero/2024 – abril/2024)</h5>
+      <p><strong>Área de Nivelación y Admisión - Facultad de Ciencias Matemáticas y Físicas (Universidad de Guayaquil)</strong></p>
+      <ul>
+        <li>Elaboración de informes mensuales</li>
+        <li>Elaboración de reportes estadísticos en base a estudiantes matriculados</li>
+        <li>Recepción de solicitudes de estudiantes (casuísticas Senescyt)</li>
+        <li>Recepción y verificación de documentos de nuevos ingresos</li>
+        <li>Manejo de utilitarios</li>
+        <li>Revisión y actualización de datos en el Sistema de la Universidad</li>
+      </ul>
+    </div>
+
+    <div data-aos="fade-up" data-aos-delay="300" class="card-custom">
+      <h5>Trainee de TI & Service Desk (julio/2024 – enero/2025)</h5>
+      <p><strong>Netlife</strong> - Guayaquil</p>
+      <ul>
+        <li>Formateo e instalación de sistemas operativos (Windows, Ubuntu) y actualizaciones</li>
+        <li>Instalación y desinstalación forzada de aplicativos mediante CMD y PowerShell</li>
+        <li>Soporte técnico presencial y remoto</li>
+        <li>Manejo de Zimbra web para la gestión de correos corporativos</li>
+        <li>Borrados seguros a discos duros mecánicos y sólidos bajo norma ISO 27001</li>
+        <li>Elaboración de actas de entrega y recepción de equipos</li>
+        <li>Registro de huellas de colaboradores en el biométrico zktime</li>
+        <li>Instalación de Sophos Endpoint en Windows</li>
+        <li>Creación, administración y actualización de cuentas de usuario en Active Directory</li>
+        <li>Configuración de dispositivos Android mediante Sophos y eliminación de dispositivos en su consola</li>
+        <li>Configuración de VPN empresarial mediante FortiClient</li>
+        <li>Configuración de clientes de correo (Thunderbird)</li>
+        <li>Configuración de laptops e ingreso al dominio desde usuario local</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Sección Habilidades Técnicas con Fondo y Tarjetas Animadas -->
+<section 
+class="section-container py-5 text-white" 
+id="habilidades"
+style="background: linear-gradient(to right, #283E51, #0A2342);"
+>
+<div class="container">
+  <!-- Título con color dorado -->
+  <h2 
+    class="section-title text-center" 
+    data-aos="fade-up" 
+    style="color: #f1c40f; margin-bottom: 50px;"
+  >
+    Habilidades Técnicas
+  </h2>
+  
+  <div class="row g-4">
+    <!-- Card 1: Microsoft Office -->
+    <div class="col-md-6 col-lg-4" data-aos="fade-up">
+      <div 
+        class="card h-100 text-dark shadow border-0 skill-card" 
+        style="border-radius: 10px; overflow: hidden;"
+      >
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center mb-3">
+            <i class="fas fa-file-alt fa-2x me-3" style="color: #2c3e50;"></i>
+            <h5 class="card-title mb-0" style="font-weight: 600;">
+              Microsoft Office
+            </h5>
+          </div>
+          <p class="card-text mb-2">
+            <strong>Nivel:</strong> Intermedio
+          </p>
+          <!-- Barra de Progreso -->
+          <div class="progress">
+            <div 
+              class="progress-bar progress-bar-striped" 
+              role="progressbar" 
+              style="width: 70%; background-color: #f1c40f;" 
+              aria-valuenow="70" 
+              aria-valuemin="0" 
+              aria-valuemax="100"
+            >
+              70%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Mantenimiento y Soporte -->
+    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+      <div 
+        class="card h-100 text-dark shadow border-0 skill-card"
+        style="border-radius: 10px; overflow: hidden;"
+      >
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center mb-3">
+            <i class="fas fa-tools fa-2x me-3" style="color: #2c3e50;"></i>
+            <h5 class="card-title mb-0">Mantenimiento y Soporte</h5>
+          </div>
+          <p class="card-text">
+            Mantenimiento preventivo y correctivo <br>
+            Soporte técnico presencial y remoto
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Sistemas/Redes -->
+    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+      <div 
+        class="card h-100 text-dark shadow border-0 skill-card"
+        style="border-radius: 10px; overflow: hidden;"
+      >
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center mb-3">
+            <i class="fas fa-network-wired fa-2x me-3" style="color: #2c3e50;"></i>
+            <h5 class="card-title mb-0">Sistemas / Redes</h5>
+          </div>
+          <p class="card-text">
+            Active Directory, Windows, Ubuntu, Android <br>
+            Anydesk, ManageEngine, Sophos, FortiClient
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección de Idiomas con Badges -->
+  <div class="mt-5 text-center" data-aos="fade-up" data-aos-delay="300">
+    <h4 style="color: #f1c40f; margin-bottom: 20px;">Idiomas</h4>
+    <span class="badge rounded-pill bg-light text-dark me-2 p-3">
+      Español (Nativo)
+    </span>
+    <span class="badge rounded-pill bg-light text-dark p-3">
+      Inglés (Básico)
+    </span>
+  </div>
+</div>
+</section>
+
+
+  
+
+  <!-- Contacto -->
+  <section class="section-container container" id="contacto">
+    <h2 class="section-title text-center" data-aos="fade-up">Contacto</h2>
+    <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-md-6 text-center">
+        <p>
+          <i class="fas fa-phone"></i> 
+          <strong>Teléfono:</strong> 0989618559
+        </p>
+        <p>
+          <i class="fas fa-envelope"></i> 
+          <strong>Email:</strong> jordy-elian2000@hotmail.com
+        </p>
+        <p>
+          <i class="fas fa-map-marker-alt"></i>
+          <strong>Ubicación:</strong> Guayaquil, Ecuador
+        </p>
+        <p>
+          <i class="fab fa-linkedin"></i> 
+          <strong>LinkedIn:</strong> 
+          <a 
+            href="https://www.linkedin.com/in/jordy-elian-figueroa-martinez-500a3ab0/" 
+            target="_blank" 
+            style="color: #2c3e50; font-weight:600;"
+          >
+            Jordy Elian Figueroa
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 - Jordy Elian Figueroa Martínez. Todos los derechos reservados.</p>
+      <p>
+        <a href="#inicio">Volver al inicio</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // duración de la animación en ms
+      once: true,    // si la animación se ejecuta solo una vez
+    });
+  </script>
+</body>
+</html>
