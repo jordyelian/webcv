@@ -4,33 +4,22 @@
   <meta charset="UTF-8" />
   <title>CV de Jordy Elian Figueroa Martínez</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="CV de Jordy Elian Figueroa Martínez — Ingeniero de TI & Service Desk. Experiencia en ManageEngine, AD, PowerShell, Sophos, Fortinet, UniFi, GLPI." />
 
   <!-- Bootstrap 5 CSS -->
-  <link 
-    rel="stylesheet" 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
 
   <!-- AOS CSS (Animate On Scroll) -->
-  <link 
-    rel="stylesheet" 
-    href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-  />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
   <!-- Google Fonts -->
-  <link 
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet"/>
 
   <!-- Font Awesome (para íconos) -->
-  <link 
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    integrity="sha512-..."
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"/>
 
   <style>
     /* -----------------------------
@@ -47,6 +36,11 @@
       color: #333;
       scroll-behavior: smooth;
       transition: background-color 0.4s, color 0.4s;
+    }
+
+    /* Contenedor de secciones (espaciado consistente) */
+    .section-container{
+      padding: 70px 0 0;
     }
 
     /* -----------------------------
@@ -81,7 +75,7 @@
     }
     body.dark-mode .card,
     body.dark-mode .card-custom {
-      border-color: #333 !important;
+      border-color: rgba(255,255,255,0.10) !important;
     }
     body.dark-mode .progress {
       background-color: #444;
@@ -97,11 +91,12 @@
        Navbar
     ----------------------------- */
     .navbar {
-      background: #2c3e50; /* gris oscuro */
+      background: #2c3e50;
       position: sticky;
       top: 0;
       z-index: 999;
       transition: background-color 0.4s;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
     .navbar-brand,
     .navbar-nav .nav-link {
@@ -117,15 +112,16 @@
       background: none;
       border: 2px solid #fff;
       color: #fff;
-      border-radius: 50%;
-      width: 35px;
-      height: 35px;
+      border-radius: 999px;
+      padding: 7px 12px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 8px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.25s;
       margin-left: 10px;
+      font-weight: 700;
+      font-size: 0.9rem;
     }
     #btnDarkMode:hover {
       background: #f1c40f;
@@ -159,6 +155,7 @@
       display: none;
       z-index: 9999;
       transition: background 0.3s;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.20);
     }
     #btnScrollTop:hover {
       background-color: #f1c40f;
@@ -172,8 +169,8 @@
       position: relative;
       background: linear-gradient(
         135deg,
-        rgba(44, 62, 80, 0.85),
-        rgba(111, 136, 160, 0.85)
+        rgba(44, 62, 80, 0.88),
+        rgba(111, 136, 160, 0.80)
       ),
       url('https://user-images.githubusercontent.com/74038190/212749447-bfb7e725-6987-49d9-ae85-2015e3e7cc41.gif')
       center/cover no-repeat;
@@ -194,58 +191,94 @@
       border: 5px solid #f1c40f;
       margin-bottom: 20px;
       transition: transform 0.3s ease;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.25);
     }
     .hero .profile-pic:hover {
       transform: scale(1.05);
     }
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       margin-bottom: 10px;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+    .hero h2{
+      font-weight: 500;
+      opacity: 0.95;
+    }
+
+    /* CTA buttons en hero */
+    .hero-cta{
+      margin-top: 18px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-accent{
+      background: #f1c40f;
+      color: #111;
+      border: none;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 800;
+    }
+    .btn-accent:hover{
+      opacity: 0.95;
+    }
+    .btn-ghost{
+      border: 2px solid rgba(255,255,255,0.9);
+      color: #fff;
+      background: transparent;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 800;
+    }
+    .btn-ghost:hover{
+      background: rgba(255,255,255,0.15);
+      color: #fff;
     }
 
     /* -----------------------------
        Secciones, Títulos
     ----------------------------- */
     .section-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.75rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  color: #2c3e50;
-  text-align: center;
-  position: relative;
-  margin-bottom: 30px;
-}
-
-/* La barra amarilla */
-.section-title::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #f1c40f;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
-/* Para anular la línea en ciertos títulos */
-.section-title.no-line::after {
-  content: none !important;
-}
-
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #2c3e50;
+      text-align: center;
+      position: relative;
+      margin-bottom: 30px;
+      letter-spacing: 0.6px;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #f1c40f;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+    .section-title.no-line::after {
+      content: none !important;
+    }
 
     /* -----------------------------
-       Personal Info (Datos Personales)
+       Personal Info
     ----------------------------- */
     .personal-info {
       background-color: #fff;
       margin-top: -50px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      border-radius: 14px;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.10);
       padding: 40px;
       position: relative;
       z-index: 3;
       margin-bottom: 50px;
+      border: 1px solid rgba(0,0,0,0.06);
     }
     .personal-info ul {
       list-style: none;
@@ -258,6 +291,7 @@
     body.dark-mode .personal-info {
       background-color: #222;
       color: #ddd;
+      border-color: rgba(255,255,255,0.10);
     }
 
     /* -----------------------------
@@ -265,20 +299,31 @@
     ----------------------------- */
     .card-custom {
       background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+      padding: 22px;
       margin-bottom: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.25s, box-shadow 0.25s;
+      border: 1px solid rgba(0,0,0,0.06);
     }
     .card-custom:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.12);
     }
     .card-custom h5 {
-      font-weight: 600;
-      font-size: 1.1rem;
+      font-weight: 700;
+      font-size: 1.08rem;
       margin-bottom: 10px;
+    }
+
+    /* Badges “premium” */
+    .badge.rounded-pill{
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      font-weight: 800;
+    }
+    body.dark-mode .badge.rounded-pill{
+      border-color: rgba(255,255,255,0.12);
     }
 
     /* -----------------------------
@@ -287,7 +332,7 @@
     .skills-section {
       background: linear-gradient(to right, #283E51, #0A2342);
       color: #fff;
-      padding: 60px 20px;
+      padding: 70px 20px;
       transition: background-color 0.4s;
     }
     .skills-section h2 {
@@ -297,17 +342,15 @@
       transition: color 0.3s;
     }
     body.dark-mode .skills-section {
-      background-color: #1a1a1a; 
+      background-color: #1a1a1a;
     }
 
     /* -----------------------------
-       Sección de Contacto
-       - Fondo blanco en modo claro
-       - Fondo oscuro en modo dark
+       Contact Section
     ----------------------------- */
     .contact-section {
       background-color: #fff;
-      padding: 60px 20px;
+      padding: 70px 20px;
       margin-top: 40px;
       color: #333;
       transition: background-color 0.4s, color 0.4s;
@@ -330,7 +373,7 @@
     footer a {
       color: #f1c40f;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 800;
     }
     footer a:hover {
       text-decoration: underline;
@@ -341,133 +384,148 @@
     ----------------------------- */
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.85rem;
       }
       .personal-info {
         margin-top: 0;
-        border-radius: 0;
+        border-radius: 14px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- =========================
+       NAVBAR
+       - Links por secciones
+       - Botón de tema persistente
+  ========================== -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#inicio">
         <i class="fas fa-laptop-code me-2"></i>
         CV Jordy Figueroa
       </a>
-      <button 
-        class="navbar-toggler text-white"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler text-white" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#formacion">
-              <i class="fas fa-user-graduate me-1"></i>Formación
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#experiencia">
-              <i class="fas fa-briefcase me-1"></i>Experiencia
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#habilidades">
-              <i class="fas fa-cogs me-1"></i>Habilidades
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto">
-              <i class="fas fa-envelope me-1"></i>Contacto
-            </a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#formacion"><i class="fas fa-user-graduate me-1"></i>Formación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia"><i class="fas fa-briefcase me-1"></i>Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certificaciones"><i class="fas fa-certificate me-1"></i>Certificaciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades"><i class="fas fa-cogs me-1"></i>Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto"><i class="fas fa-envelope me-1"></i>Contacto</a></li>
         </ul>
+
         <!-- Botón Dark Mode -->
-        <button id="btnDarkMode" class="ms-3" title="Cambiar tema">
-          <i class="fas fa-adjust"></i>
+        <button id="btnDarkMode" class="ms-3" title="Cambiar tema" type="button" aria-label="Cambiar tema">
+          <i id="themeIcon" class="fas fa-moon"></i>
+          <span class="d-none d-sm-inline">Tema</span>
         </button>
       </div>
     </div>
   </nav>
 
   <!-- Botón flotante "Scroll to Top" -->
-  <button id="btnScrollTop" title="Ir arriba">
+  <button id="btnScrollTop" title="Ir arriba" aria-label="Ir arriba">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- Hero Section -->
+  <!-- =========================
+       HERO
+       - Foto + título + subtítulo
+       - CTA (LinkedIn / GitHub / PDF opcional)
+  ========================== -->
   <section class="hero" id="inicio">
     <div class="container hero-content d-flex flex-column align-items-center justify-content-center">
-      <!-- Foto de Perfil -->
-      <img 
-        src="assets/jordyimg.jpg" 
-        alt="Foto de Jordy" 
-        class="profile-pic"
-        data-aos="zoom-in"
-      />
+      <img src="assets/jordyimg.jpg"
+           alt="Foto de Jordy"
+           class="profile-pic"
+           data-aos="zoom-in"/>
+
       <h1 class="mt-3" data-aos="fade-up">Jordy Elian Figueroa Martínez</h1>
       <h2 class="mt-2" data-aos="fade-up" data-aos-delay="100">
-        Ingeniero en Software • Soporte de TI
+        Ingeniero de TI &amp; Service Desk • Soporte TI • Automatización (PowerShell)
       </h2>
+
+      <div class="hero-cta" data-aos="fade-up" data-aos-delay="180">
+        <!-- Si luego subes un PDF, cambia href="assets/CV_JordyFigueroa.pdf" -->
+        <a class="btn btn-accent"
+        href="cv-jordyelian.pdf"
+        target="_blank"
+        rel="noopener">
+    <i class="fas fa-file-pdf me-2"></i>Ver CV (PDF)
+        </a>
+
+        <!-- Si tienes GitHub, pega tu link -->
+        <a class="btn btn-ghost" href="#" target="_blank" rel="noopener">
+          <i class="fab fa-github me-2"></i>GitHub
+        </a>
+
+        <a class="btn btn-ghost"
+           href="https://www.linkedin.com/in/jordy-elian-figueroa-martinez-500a3ab0/"
+           target="_blank" rel="noopener">
+          <i class="fab fa-linkedin me-2"></i>LinkedIn
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Información Personal -->
+  <!-- =========================
+       DATOS + OBJETIVO
+       - Recomendación: evita cédula completa en GitHub público
+  ========================== -->
   <section class="personal-info container mt-5" data-aos="fade-up" data-aos-delay="200">
-    <div class="row">
-      <div class="col-12">
+    <div class="row g-4">
+      <div class="col-12 col-lg-6">
         <h3 class="section-title no-line" style="text-align:left;">Datos Personales</h3>
-
-        
         <ul>
-          <li><strong>Cédula:</strong> 0950565267</li>
+          <!-- Recomendado en público: enmascarar cédula -->
+          <li><strong>Cédula:</strong> 0950*******</li>
           <li><strong>Teléfono:</strong> 0989618559</li>
-          <li><strong>Edad:</strong> 24 años</li>
-          <li><strong>Fecha de nacimiento:</strong> 6 de marzo del 2000</li>
-          <li><strong>Estado civil:</strong> Soltero</li>
+          <li><strong>Edad:</strong> 25 años</li>
           <li><strong>Email:</strong> jordy-elian2000@hotmail.com</li>
+          <li><strong>Ubicación:</strong> Guayaquil / Durán, Ecuador</li>
         </ul>
+      </div>
 
-        <h3 class="section-title no-line" style="text-align:left;">Objetivo Profesional</h3>
+      <div class="col-12 col-lg-6">
+        <h3 class="section-title no-line" style="text-align:left;">Perfil Profesional</h3>
         <p>
-          Soy Ingeniero en Software con una sólida formación técnica y experiencia en soporte, 
-          mantenimiento y optimización de sistemas. Mi objetivo es integrarme a un equipo innovador 
-          donde pueda aplicar mis conocimientos para desarrollar, mejorar y gestionar sistemas que 
-          impulsen la eficiencia y la adaptabilidad tecnológica de la organización. Me apasiona 
-          trabajar en proyectos que involucren la integración de soluciones tecnológicas complejas, 
-          la automatización de procesos y la mejora continua de la infraestructura, con el fin de 
-          maximizar el rendimiento y la escalabilidad de los sistemas en un entorno dinámico y en 
-          constante evolución.
+          Ingeniero de TI &amp; Service Desk con experiencia en soporte N1/N2, administración de
+          herramientas corporativas y gestión de incidentes. Enfocado en operación estable,
+          seguridad endpoint, automatización (PowerShell) y documentación técnica (ITIL/SLA),
+          aportando mejora continua y estandarización de procesos para entornos corporativos.
+        </p>
+
+        <!-- Highlights visual (senior) -->
+        <p style="margin-bottom:0;">
+          <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-3">ManageEngine (Nacional)</span>
+          <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-3">SOC / Seguridad</span>
+          <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-3">PowerShell / AD</span>
+          <span class="badge rounded-pill bg-light text-dark mb-2 p-3">Fortinet / UniFi</span>
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Formación Académica -->
+  <!-- =========================
+       FORMACIÓN
+  ========================== -->
   <section class="section-container container" id="formacion">
     <h2 class="section-title" data-aos="fade-up">Formación Académica</h2>
+
     <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
-      <!-- Bachiller -->
       <div class="col-md-6 d-flex">
         <div class="card-custom w-100">
           <h5>Bachiller técnico en administración de sistemas (2015 - 2018)</h5>
-          <p>
-            <strong>Unidad educativa diez de enero</strong> - Durán, Ecuador
-          </p>
+          <p><strong>Unidad educativa diez de enero</strong> - Durán, Ecuador</p>
         </div>
       </div>
-      <!-- Ingeniería -->
+
       <div class="col-md-6 d-flex">
         <div class="card-custom w-100">
           <h5>Ingeniero en Software (Titulado)</h5>
@@ -480,30 +538,62 @@
     </div>
   </section>
 
-  <!-- Experiencia Profesional -->
+  <!-- =========================
+       EXPERIENCIA PROFESIONAL
+       - Orden: más reciente primero
+       - Cards + AOS
+  ========================== -->
   <section class="section-container container" id="experiencia">
     <h2 class="section-title" data-aos="fade-up">Experiencia Profesional</h2>
-    
+
+    <!-- NETLIFE (ACTUAL) -->
     <div data-aos="fade-up" data-aos-delay="100" class="card-custom">
-      <h5>Pasante de Tecnologías de la Información (Abril/2017 – Mayo/2017)</h5>
-      <p><strong>Emapad EP, Durán</strong></p>
+      <h5>Ingeniero de TI &amp; Service Desk (Octubre/2025 – Actualidad)</h5>
+      <p><strong>Netlife</strong> - Guayaquil</p>
+
+      <p style="margin-bottom:10px;">
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-2">Service Desk N1/N2</span>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-2">ManageEngine (Nacional)</span>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-2">Seguridad / SOC</span>
+        <span class="badge rounded-pill bg-light text-dark mb-2 p-2">PowerShell / AD</span>
+      </p>
+
       <ul>
-        <li>Servicio técnico, mantenimiento de equipos e instalación de periféricos.</li>
-        <li>Visitas técnicas (virtuales y presenciales) y configuración de equipos.</li>
+        <li>Soporte de aplicaciones en Windows, Android y Linux, con análisis de logs para resolución de incidentes.</li>
+        <li>Administración de ManageEngine a nivel nacional: equipos, políticas de seguridad, distribución de software y despliegue de parches.</li>
+        <li>Gestión remota y masiva de actualizaciones de seguridad de Windows para cumplimiento y reducción de vulnerabilidades.</li>
+        <li>Gestión de tickets SOC: análisis de alertas, revisiones de sistemas y mitigación de incidentes mediante PowerShell.</li>
+        <li>Automatización en PowerShell sobre Active Directory: validación de usuarios/cuentas y control de objetos bloqueados/deshabilitados.</li>
+        <li>Administración de red en switches Huawei: exclusión de IP y asignación de dispositivos por MAC según políticas.</li>
+        <li>Soporte N1/N2 cumpliendo SLA, buenas prácticas ITIL y documentación técnica para auditoría.</li>
       </ul>
     </div>
 
+    <!-- EXPORTQUILSA -->
+    <div data-aos="fade-up" data-aos-delay="150" class="card-custom">
+      <h5>Técnico de Infraestructura (Junio/2025 – Septiembre/2025)</h5>
+      <p><strong>Exportquilsa</strong></p>
+
+      <p style="margin-bottom:10px;">
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-2">FortiGate / UniFi</span>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-2">GLPI (N2/N3)</span>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-2">ESET Console</span>
+        <span class="badge rounded-pill bg-light text-dark mb-2 p-2">NAS / Impresoras</span>
+      </p>
+
+      <ul>
+        <li>Soporte técnico Windows/Android, mantenimiento e instalación de periféricos; configuración de IP estática.</li>
+        <li>Preparación/configuración de equipos: laptops, tablets, handhelds Android y dispositivos Zebra.</li>
+        <li>Administración de Active Directory: usuarios, grupos y políticas.</li>
+        <li>Administración FortiGate y UniFi para control de accesos por MAC en diferentes VLANs.</li>
+        <li>Telefonía IP con controladora Grandstream; antivirus ESET (alertas/licenciamiento).</li>
+        <li>Gestión y documentación de incidencias en GLPI (Soporte N2/N3); respaldos en NAS.</li>
+        <li>Soporte a impresoras Honeywell/Epson y uso de ERP Calipso (inventario); informes y actas de entrega.</li>
+      </ul>
+    </div>
+
+    <!-- Netlife (Histórico / Trainee) -->
     <div data-aos="fade-up" data-aos-delay="200" class="card-custom">
-      <h5>Pasante Preprofesional (Enero/2024 – Abril/2024)</h5>
-      <p><strong>Área de Nivelación y Admisión - Univ. de Guayaquil</strong></p>
-      <ul>
-        <li>Elaboración de informes mensuales y reportes estadísticos.</li>
-        <li>Recepción de documentos de nuevos ingresos y solicitudes (Senescyt).</li>
-        <li>Revisión y actualización de datos en el sistema institucional.</li>
-      </ul>
-    </div>
-
-    <div data-aos="fade-up" data-aos-delay="300" class="card-custom">
       <h5>Trainee de TI &amp; Service Desk (Julio/2024 – Enero/2025)</h5>
       <p><strong>Netlife</strong> - Guayaquil</p>
       <ul>
@@ -514,45 +604,84 @@
         <li>Dispositivos Android (Sophos), correo (Thunderbird), ingreso al dominio.</li>
       </ul>
     </div>
+
+    <!-- Pasante UG -->
+    <div data-aos="fade-up" data-aos-delay="250" class="card-custom">
+      <h5>Pasante Preprofesional (Enero/2024 – Abril/2024)</h5>
+      <p><strong>Área de Nivelación y Admisión - Univ. de Guayaquil</strong></p>
+      <ul>
+        <li>Elaboración de informes mensuales y reportes estadísticos.</li>
+        <li>Recepción de documentos de nuevos ingresos y solicitudes (Senescyt).</li>
+        <li>Revisión y actualización de datos en el sistema institucional.</li>
+      </ul>
+    </div>
+
+    <!-- Pasante Emapad -->
+    <div data-aos="fade-up" data-aos-delay="300" class="card-custom">
+      <h5>Pasante de Tecnologías de la Información (Abril/2017 – Mayo/2017)</h5>
+      <p><strong>Emapad EP, Durán</strong></p>
+      <ul>
+        <li>Servicio técnico, mantenimiento de equipos e instalación de periféricos.</li>
+        <li>Visitas técnicas (virtuales y presenciales) y configuración de equipos.</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- Sección Habilidades -->
+  <!-- =========================
+       CERTIFICACIONES
+  ========================== -->
+  <section class="section-container container" id="certificaciones">
+    <h2 class="section-title" data-aos="fade-up">Certificaciones</h2>
+
+    <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-md-6 d-flex">
+        <div class="card-custom w-100">
+          <h5>Computer Hardware Basics</h5>
+          <p><strong>Cisco</strong> — Mayo 2025</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 d-flex">
+        <div class="card-custom w-100">
+          <h5>Fundamentos de la carrera de administración de sistemas</h5>
+          <p><strong>Microsoft Learning</strong> — Mayo 2025</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 d-flex">
+        <div class="card-custom w-100">
+          <h5>Introducción a Cisco Packet Tracer</h5>
+          <p><strong>Cisco</strong> — Mayo 2025</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+       HABILIDADES
+       - Cards existentes + Stack/Badges
+  ========================== -->
   <section class="skills-section" id="habilidades">
     <div class="container">
-      <h2 
-        class="section-title" 
-        data-aos="fade-up"
-      >
-        Habilidades Técnicas
-      </h2>
+      <h2 class="section-title" data-aos="fade-up">Habilidades Técnicas</h2>
 
       <div class="row g-4">
         <!-- Card 1 -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up">
-          <div 
-            class="card h-100 text-dark shadow border-0 skill-card card-custom" 
-            style="border-radius: 10px; overflow: hidden;"
-          >
+          <div class="card h-100 text-dark shadow border-0 skill-card card-custom" style="border-radius: 14px; overflow: hidden;">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
                 <i class="fas fa-file-alt fa-2x me-3" style="color: #2c3e50;"></i>
-                <h5 class="mb-0" style="font-weight: 600;">
-                  Microsoft Office
-                </h5>
+                <h5 class="mb-0" style="font-weight: 700;">Microsoft Office</h5>
               </div>
               <p class="card-text mb-2">
                 <strong>Nivel:</strong> Intermedio
               </p>
-              <!-- Barra de Progreso -->
               <div class="progress">
-                <div 
-                  class="progress-bar progress-bar-striped" 
-                  role="progressbar" 
-                  style="width: 70%; background-color: #f1c40f;" 
-                  aria-valuenow="70" 
-                  aria-valuemin="0" 
-                  aria-valuemax="100"
-                >
+                <div class="progress-bar progress-bar-striped"
+                     role="progressbar"
+                     style="width: 70%; background-color: #f1c40f;"
+                     aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
                   70%
                 </div>
               </div>
@@ -562,14 +691,11 @@
 
         <!-- Card 2 -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div 
-            class="card h-100 text-dark shadow border-0 skill-card card-custom"
-            style="border-radius: 10px; overflow: hidden;"
-          >
+          <div class="card h-100 text-dark shadow border-0 skill-card card-custom" style="border-radius: 14px; overflow: hidden;">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
                 <i class="fas fa-tools fa-2x me-3" style="color: #2c3e50;"></i>
-                <h5 class="mb-0">Mantenimiento y Soporte</h5>
+                <h5 class="mb-0" style="font-weight: 700;">Mantenimiento y Soporte</h5>
               </div>
               <p class="card-text">
                 Mantenimiento preventivo y correctivo <br>
@@ -581,66 +707,66 @@
 
         <!-- Card 3 -->
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div 
-            class="card h-100 text-dark shadow border-0 skill-card card-custom"
-            style="border-radius: 10px; overflow: hidden;"
-          >
+          <div class="card h-100 text-dark shadow border-0 skill-card card-custom" style="border-radius: 14px; overflow: hidden;">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
                 <i class="fas fa-network-wired fa-2x me-3" style="color: #2c3e50;"></i>
-                <h5 class="mb-0">Sistemas / Redes</h5>
+                <h5 class="mb-0" style="font-weight: 700;">Sistemas / Redes</h5>
               </div>
               <p class="card-text">
                 Active Directory, Windows, Ubuntu, Android <br>
-                Anydesk, ManageEngine, Sophos, FortiClient
+                AnyDesk, ManageEngine, Sophos, FortiClient
               </p>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Stack / Herramientas -->
+      <div class="mt-5 text-center" data-aos="fade-up" data-aos-delay="260">
+        <h4 style="color: #f1c40f; margin-bottom: 14px;">Stack / Herramientas</h4>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-3">Active Directory</span>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-3">PowerShell</span>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-3">ManageEngine</span>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-3">Sophos Endpoint</span>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-3">Fortinet / FortiClient</span>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-3">UniFi</span>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-3">GLPI</span>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-3">Zimbra / Exchange</span>
+        <span class="badge rounded-pill bg-light text-dark me-2 mb-2 p-3">NAS / Backups</span>
+      </div>
+
       <!-- Idiomas -->
-      <div class="mt-5 text-center" data-aos="fade-up" data-aos-delay="300">
+      <div class="mt-4 text-center" data-aos="fade-up" data-aos-delay="320">
         <h4 style="color: #f1c40f; margin-bottom: 20px;">Idiomas</h4>
-        <span class="badge rounded-pill bg-light text-dark me-2 p-3">
-          Español (Nativo)
-        </span>
-        <span class="badge rounded-pill bg-light text-dark p-3">
-          Inglés (Básico)
-        </span>
+        <span class="badge rounded-pill bg-light text-dark me-2 p-3">Español (Nativo)</span>
+        <span class="badge rounded-pill bg-light text-dark p-3">Inglés (Básico)</span>
       </div>
     </div>
   </section>
 
-  <!-- Sección Contacto (Fondo Blanco) -->
+  <!-- =========================
+       CONTACTO
+  ========================== -->
   <section class="contact-section" id="contacto">
     <div class="container">
       <h2 class="section-title" data-aos="fade-up">Contacto</h2>
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-md-6 text-center">
-          <p>
-            <i class="fas fa-phone"></i> 
-            <strong>Teléfono:</strong> 0989618559
-          </p>
-          <p>
-            <i class="fas fa-envelope"></i> 
-            <strong>Email:</strong> jordy-elian2000@hotmail.com
-          </p>
-          <p>
-            <i class="fas fa-map-marker-alt"></i>
-            <strong>Ubicación:</strong> Guayaquil, Ecuador
-          </p>
-          <p>
-            <i class="fab fa-linkedin"></i>
-            <strong>LinkedIn:</strong>
-            <a 
-              href="https://www.linkedin.com/in/jordy-elian-figueroa-martinez-500a3ab0/"
-              target="_blank"
-              style="color: #2c3e50; font-weight:600;"
-            >
-              Jordy Elian Figueroa
-            </a>
-          </p>
+        <div class="col-md-7 text-center">
+          <div class="card-custom">
+            <p><i class="fas fa-phone"></i> <strong>Teléfono:</strong> 0989618559</p>
+            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> jordy-elian2000@hotmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> <strong>Ubicación:</strong> Guayaquil, Ecuador</p>
+            <p class="mb-0">
+              <i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong>
+              <a href="https://www.linkedin.com/in/jordy-elian-figueroa-martinez-500a3ab0/"
+                 target="_blank"
+                 rel="noopener"
+                 style="color: #2c3e50; font-weight:800;">
+                Jordy Elian Figueroa
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -649,43 +775,60 @@
   <!-- Footer -->
   <footer class="mt-5">
     <div class="container">
-      <p>© 2025 - Jordy Elian Figueroa Martínez. Todos los derechos reservados.</p>
-      <p>
-        <a href="#inicio">Volver al inicio</a>
-      </p>
+      <p>© 2026 - Jordy Elian Figueroa Martínez. Todos los derechos reservados.</p>
+      <p><a href="#inicio">Volver al inicio</a></p>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script 
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <script>
-    // Iniciar AOS
+    /* =========================================================
+       AOS Init
+    ========================================================= */
     AOS.init({
       duration: 800,
       once: true
     });
 
-    // Botón "Scroll to Top"
+    /* =========================================================
+       Scroll To Top
+    ========================================================= */
     const btnScrollTop = document.getElementById('btnScrollTop');
-    window.onscroll = function() {
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        btnScrollTop.style.display = "block";
-      } else {
-        btnScrollTop.style.display = "none";
-      }
-    };
+    window.addEventListener('scroll', () => {
+      const y = document.documentElement.scrollTop || document.body.scrollTop;
+      btnScrollTop.style.display = (y > 200) ? "block" : "none";
+    });
     btnScrollTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Botón Dark Mode
+    /* =========================================================
+       Dark Mode Persistente
+       - Guarda preferencia en localStorage
+    ========================================================= */
     const btnDarkMode = document.getElementById('btnDarkMode');
+    const themeIcon = document.getElementById('themeIcon');
+    const THEME_KEY = 'cv_theme';
+
+    function applyTheme(theme){
+      const isDark = theme === 'dark';
+      document.body.classList.toggle('dark-mode', isDark);
+      themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    // Al cargar, aplica tema guardado o light por defecto
+    const savedTheme = localStorage.getItem(THEME_KEY) || 'light';
+    applyTheme(savedTheme);
+
     btnDarkMode.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
+      const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+      localStorage.setItem(THEME_KEY, nextTheme);
+      applyTheme(nextTheme);
     });
   </script>
 </body>
 </html>
+
